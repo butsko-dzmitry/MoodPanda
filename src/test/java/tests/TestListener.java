@@ -37,13 +37,12 @@ public class TestListener implements ITestListener {
     private byte[] takeScreenshot(ITestResult iTestResult) {
         ITestContext context = iTestResult.getTestContext();
         try {
-   //         return (TakesScreenshot)getWebDriver().getScreenshotAs(OutputType.BYTES);
+            return ((TakesScreenshot)getWebDriver()).getScreenshotAs(OutputType.BYTES);
         } catch (NoSuchSessionException ex) {
             return null;
         } catch (IllegalStateException ex) {
             return null;
         }
-        return null;
     }
 
 
